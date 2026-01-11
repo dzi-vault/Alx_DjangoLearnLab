@@ -1,6 +1,7 @@
 from bookshelf.models import Book
 
-# RETRIEVE all books
-Book.objects.all()
+# RETRIEVE the book we created
+book = Book.objects.get(title="1984")
+book
 # Output:
-# <QuerySet [<Book: 1984>]>
+# <Book: 1984>
