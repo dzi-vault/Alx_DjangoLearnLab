@@ -112,6 +112,16 @@ USE_I18N = True
 
 USE_TZ = True
 
+# SECURITY SETTINGS
+DEBUG = False  # Turn off debug in production
+
+SECURE_BROWSER_XSS_FILTER = True
+X_FRAME_OPTIONS = 'DENY'
+SECURE_CONTENT_TYPE_NOSNIFF = True
+
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
