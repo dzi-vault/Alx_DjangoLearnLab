@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.decorators import permission_required
 from django.shortcuts import render, redirect
 from .models import Book
+from .forms import ExampleForm
 
 @permission_required("bookshelf.can_view", raise_exception=True)
 def list_books(request):
