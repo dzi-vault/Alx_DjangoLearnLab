@@ -7,6 +7,7 @@ from rest_framework import generics
 from rest_framework.filters import SearchFilter, OrderingFilter
 from django_filters.rest_framework import DjangoFilterBackend
 from .models import Book
+from django_filters import rest_framework
 
 # List all books
 class BookListView(generics.ListAPIView):
