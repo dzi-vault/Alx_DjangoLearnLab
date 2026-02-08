@@ -9,6 +9,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 from .models import Book
 from django_filters import rest_framework
 from rest_framework import filters
+from rest_framework import viewsets
 
 # List all books
 class BookListView(generics.ListAPIView):
@@ -63,7 +64,7 @@ class BookViewSet(viewsets.ModelViewSet):
     queryset = Book.objects.all()
     serializer_class = BookSerializer
     filter_backends = [filters.SearchFilter, filters.OrderingFilter]
-    search_fields = ['title', 'author']
+    search_fields = ['title', 'author__name']
     ordering_fields = ['title', 'author']
 
 # Create your views here.
