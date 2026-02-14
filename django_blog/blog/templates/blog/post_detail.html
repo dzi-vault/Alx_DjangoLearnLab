@@ -24,3 +24,9 @@
     </form>
 {% endif %}
 
+<p>Tags:
+    {% for tag in object.tags.all %}
+        <a href="{% url 'tag-posts' tag.name %}">{{ tag.name }}</a>
+    {% endfor %}
+</p>
+
