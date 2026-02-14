@@ -11,7 +11,7 @@ from .forms import PostForm
 from .models import Comment
 from .forms import CommentForm
 from django.db.models import Q
-from .models import Post, Tag
+from .models import Post
 
 def register_view(request):
     if request.method == "POST":
