@@ -12,6 +12,8 @@ from .models import Comment
 from .forms import CommentForm
 from django.db.models import Q
 from .models import Post
+from taggit.models import Tag
+from django.shortcuts import get_object_or_404
 
 def register_view(request):
     if request.method == "POST":
@@ -122,12 +124,13 @@ class SearchResultsView(ListView):
             ).distinct()
         return Post.objects.none()
 
-class TagPostListView(ListView):
+class PostByTagListView(ListView):
     model = Post
-    template_name = 'blog/tag_posts.html'
+    template_name = 'blog/post_list.html'
     context_object_name = 'posts'
 
     def get_queryset(self):
-        return Post.objects.filter(tags__name=self.kwargs['tag_name'])
+        tag = get_object_or_404(Tag, slug=self.kwargs['tag_slug'])
+        return Post.objects.filter(tags=tag)
 
 # Create your views here.
