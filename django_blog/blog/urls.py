@@ -13,7 +13,8 @@ from .views import (
     CommentUpdateView,
     CommentDeleteView,
 )
-from .views import SearchResultsView, TagPostListView
+from .views import SearchResultsView, PostByTagListView
+
 
 
 urlpatterns = [
